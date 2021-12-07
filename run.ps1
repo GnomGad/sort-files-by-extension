@@ -1,4 +1,5 @@
-﻿$files = Get-ChildItem -Name -File
+﻿$files = [System.Collections.ArrayList](Get-ChildItem -Name -File)
+$files.Remove($MyInvocation.MyCommand.Name)
 
 foreach($file in $files)
 {
